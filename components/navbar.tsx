@@ -47,6 +47,7 @@ export default function BasicNavbar(props: NavbarProps) {
       height="60px"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
+      isBordered
     >
       {/* Left Content */}
       <NavbarBrand>
