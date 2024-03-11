@@ -1,3 +1,4 @@
+import BrandBanner from "@/components/brand-banner";
 import Pricing from "@/components/pricing";
 import { title } from "@/components/primitives";
 
