@@ -75,7 +75,9 @@ export default function Home() {
 
 
 		</div>
-<BrandBanner/>
+			<div className="w-full">
+			<BrandBanner/>
+			</div>
 </section>
 
 		

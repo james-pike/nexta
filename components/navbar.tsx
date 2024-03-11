@@ -19,6 +19,12 @@ import {Icon} from "@iconify/react";
 
 import {cn} from "../cn";
 import {AcmeIcon} from "../social";
+import { ThemeSwitcher } from "./theme-switcher";
+import {Switch, VisuallyHidden, useSwitch} from "@nextui-org/react";
+import {MoonIcon} from "./moonicon";
+import {SunIcon} from "./sunicon";
+import { ThemeButton } from "./theme-button";
+
 
 const menuItems = [
   "About",
@@ -41,7 +47,7 @@ export default function BasicNavbar(props: NavbarProps) {
         base: cn("border-default-100", {
           "bg-default-200/50 dark:bg-default-100/50": isMenuOpen,
         }),
-        wrapper: "w-full justify-center",
+        wrapper: "justify-center",
         item: "hidden md:flex",
       }}
       height="60px"
@@ -54,11 +60,12 @@ export default function BasicNavbar(props: NavbarProps) {
         <div className="rounded-full bg-foreground text-background">
           <AcmeIcon size={34} />
         </div>
-        <span className="ml-2 text-small font-medium">ACME</span>
+        <span className="ml-2 text-large font-medium">Webdev.ca</span>
       </NavbarBrand>
 
       {/* Center Content */}
       <NavbarContent justify="center">
+        
         <NavbarItem>
           <Link className="text-default-500" href="/" size="sm">
             Home
@@ -84,6 +91,7 @@ export default function BasicNavbar(props: NavbarProps) {
             Integrations
           </Link>
         </NavbarItem>
+        <ThemeButton/>
       </NavbarContent>
 
       {/* Right Content */}
