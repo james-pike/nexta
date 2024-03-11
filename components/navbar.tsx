@@ -59,7 +59,7 @@ export default function BasicNavbar(props: NavbarProps) {
       {/* Center Content */}
       <NavbarContent justify="center">
         <NavbarItem>
-          <Link className="text-default-500" href="#" size="sm">
+          <Link className="text-default-500" href="/" size="sm">
             Home
           </Link>
         </NavbarItem>
@@ -74,8 +74,8 @@ export default function BasicNavbar(props: NavbarProps) {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-default-500" href="#" size="sm">
-            About Us
+          <Link className="text-default-500" href="/pricing" size="sm">
+            Pricing
           </Link>
         </NavbarItem>
         <NavbarItem>
