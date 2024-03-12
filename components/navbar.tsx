@@ -47,22 +47,10 @@ export default function BasicNavbar(props: NavbarProps) {
         base: cn("border-default-100", {
           "bg-default-200/50 dark:bg-default-100/50": isMenuOpen,
         }),
-        wrapper: "justify-center px-28",
-         item: [
-          "flex",
-          "relative",
-          "h-full",
-          "items-center",
-          "data-[active=true]:after:content-['']",
-          "data-[active=true]:after:absolute",
-          "data-[active=true]:after:bottom-0",
-          "data-[active=true]:after:left-0",
-          "data-[active=true]:after:right-0",
-          "data-[active=true]:after:h-[2px]",
-          "data-[active=true]:after:rounded-[2px]",
-          "data-[active=true]:after:bg-primary",
-        ],
+        wrapper: "justify-center",
+        item: "hidden md:flex",
       }}
+      className=" lg:px-28"
       height="60px"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}

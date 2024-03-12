@@ -42,7 +42,7 @@ export default function RootLayout({
 				{/* //Added lg:px-10 */}
 					<div className="relative w-full flex flex-col h-screen">			
 						<BasicNavbar  />
-						<main className="mx-auto w-full flex-grow">
+						<main className="mx-auto w-full flex-grow px-4">
 							{children}
 						</main>
 						{/* <footer className="w-full flex items-center justify-center py-3">
