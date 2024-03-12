@@ -54,13 +54,14 @@ export default function BasicNavbar(props: NavbarProps) {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       isBordered
+      className="w-full"
     >
       {/* Left Content */}
       <NavbarBrand>
         <div className="rounded-full bg-foreground text-background">
           <AcmeIcon size={34} />
         </div>
-        <span className="ml-2 text-xl font-bold">Webdev.ca</span>
+        <span className="ml-2 text-xl font-bold">Webdev Studio</span>
       </NavbarBrand>
 
       {/* Center Content */}
