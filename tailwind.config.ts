@@ -39,6 +39,8 @@ module.exports = {
         "scrolling-banner": "scrolling-banner var(--duration) linear infinite",
         "scrolling-banner-vertical": "scrolling-banner-vertical var(--duration) linear infinite",
       },
+
+      
     },
   },
 

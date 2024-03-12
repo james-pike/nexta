@@ -9,6 +9,7 @@ import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import BrandBanner from "@/components/brand-banner";
 import { Typewriter } from 'react-simple-typewriter'
+import { Button } from "@nextui-org/button";
 
 export default function Home() {
 
@@ -53,12 +54,27 @@ export default function Home() {
 						/>
 					</span>
 				</h1>
+<br></br>
+<br></br>
+<p></p>
+		<div className="flex flex-wrap gap-4 items-center justify-center">
+			
+     
+      <Button size="lg"color="primary">
+        Get Started
+      </Button>  
+	  <Button size ="lg" color="default">
+        Learn More
+      </Button>
 
+    </div>
 
 			</div>
 
 
+
 		</div>
+
 	
 			<BrandBanner/>
 			
