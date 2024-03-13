@@ -34,18 +34,25 @@ export default function Home() {
 
 
 			<div className="text-center">
-				<h1 className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8" style={{ paddingTop: '5rem', margin: 'auto 0', fontWeight: 'normal', textAlign: 'center' }}>
-					Custom Solutions in{' '}
+			<a href="#" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 
+				dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
+            <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span className="text-sm font-medium">Flowbite is out! See what's new</span> 
+            <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" 
+				d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+        </a>
+				<h1 className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8" 
+					style={{ paddingTop: '1rem', margin: 'auto 0', fontWeight: 'bold', textAlign: 'center' }}>
+					Custom Solutions in
 					<br></br>
 					
 					
 					<span className="text-primary w-full" style={{ fontWeight: 'bold' }}>
 						{/* Style will be inherited from the parent element */}
 						<Typewriter
-							words={['Web Design', 'Application Development', 'Digital Marketing', 'Branding']}
+							words={['Web Design', 'Digital Marketing', 'App Development', 'Branding', 'SEO + Analytics', 'Social Media', 'E-commerce', 'Content Creation', 'Graphic Design', 'Product Photography']}
 							loop={2}
 							cursor
-							cursorStyle='_'
+							cursorStyle='|'
 							typeSpeed={100}
 							deleteSpeed={50}
 							delaySpeed={1000}
@@ -54,7 +61,7 @@ export default function Home() {
 						/>
 					</span>
 				</h1>
-<br></br>
+				<p className="mb-8 text-lg px-4 font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">We focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
 <br></br>
 <p></p>
 		<div className="flex flex-wrap gap-4 items-center justify-center">
@@ -67,6 +74,8 @@ export default function Home() {
         Learn More
       </Button>
 
+	  
+
     </div>
 
 			</div>
@@ -75,8 +84,8 @@ export default function Home() {
 
 		</div>
 
-	
-			<BrandBanner/>
+		<BrandBanner/>
+		
 			
 </section>
 
