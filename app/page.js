@@ -1,20 +1,32 @@
 'use client'
 
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code"
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
 import BrandBanner from "@/components/brand-banner";
 import { Typewriter } from 'react-simple-typewriter'
 import { Button } from "@nextui-org/button";
+import React, { useEffect } from 'react';
+
+
 
 export default function Home() {
 
+	
+	useEffect(() => {
+		// Load Crisp chat script
+		window.$crisp = [];
+		window.CRISP_WEBSITE_ID = "283b7c7f-4f69-4725-ba15-f11822e24856";
+		const d = document;
+		const s = d.createElement("script");
+		s.src = "https://client.crisp.chat/l.js";
+		s.async = 1;
+		d.getElementsByTagName("head")[0].appendChild(s);
+	
+		// Clean up the script when component unmounts
+		return () => {
+		  d.getElementsByTagName("head")[0].removeChild(s);
+		};
+	  }, []);
 
-	const handleType = (count: number) => {
+	const handleType = (count) => {
 		// access word count number
 		console.log(count)}
 	  
@@ -22,7 +34,6 @@ export default function Home() {
 	  const handleDone = () => {
 		console.log(`Done after 5 loops!`)
 	  }
-
 
 
 	return (

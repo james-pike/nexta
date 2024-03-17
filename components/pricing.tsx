@@ -44,7 +44,7 @@ export default function Pricing() {
         />
       </div>
       <div className="flex max-w-xl flex-col text-center">
-        <h2 className="font-medium leading-7 text-secondary">Pricing</h2>
+        <h2 className="font-medium leading-7 text-primary">Pricing</h2>
         <h1 className="text-4xl font-medium tracking-tight">Get unlimited access.</h1>
         <Spacer y={4} />
         <h2 className="text-large text-default-500">
@@ -68,7 +68,7 @@ export default function Pricing() {
           title={
             <div className="flex items-center gap-2">
               <p>Pay Yearly</p>
-              <Chip color="secondary" variant="flat">
+              <Chip color="primary" variant="flat">
                 Save 25%
               </Chip>
             </div>
@@ -83,12 +83,12 @@ export default function Pricing() {
             key={tier.key}
             isBlurred
             className={cn("bg-background/60 p-3 dark:bg-default-100/50", {
-              "!border-small border-secondary/50": tier.mostPopular,
+              "!border-small border-primary/50": tier.mostPopular,
             })}
             shadow="md"
           >
             {tier.mostPopular ? (
-              <Chip className="absolute right-4 top-4" color="secondary" variant="flat">
+              <Chip className="absolute right-4 top-4" color="primary" variant="flat">
                 Most Popular
               </Chip>
             ) : null}
@@ -113,7 +113,7 @@ export default function Pricing() {
               <ul className="flex flex-col gap-2">
                 {tier.features?.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
-                    <Icon className="text-secondary" icon="ci:check" width={24} />
+                    <Icon className="text-primary" icon="ci:check" width={24} />
                     <p className="text-default-500">{feature}</p>
                   </li>
                 ))}
@@ -123,7 +123,7 @@ export default function Pricing() {
               <Button
                 fullWidth
                 as={Link}
-                color="secondary"
+                color="primary"
                 href={tier.href}
                 variant={tier.buttonVariant}
               >

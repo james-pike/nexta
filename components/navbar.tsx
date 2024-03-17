@@ -16,29 +16,25 @@ import {
   Divider,
 } from "@nextui-org/react";
 import {Icon} from "@iconify/react";
-
 import {cn} from "../cn";
 import {AcmeIcon} from "../social";
-import { ThemeSwitcher } from "./theme-switcher";
-import {Switch, VisuallyHidden, useSwitch} from "@nextui-org/react";
-import {MoonIcon} from "./moonicon";
-import {SunIcon} from "./sunicon";
 import { ThemeButton } from "./theme-button";
+import { usePathname } from "next/navigation";
 
 
 const menuItems = [
-  "About",
-  "Blog",
-  "Customers",
-  "Pricing",
-  "Enterprise",
-  "Changelog",
-  "Documentation",
-  "Contact Us",
+  { name: "Home", route: "/" },
+  { name: "Services", route: "/services" },
+  { name: "Pricing", route: "/pricing" },
+  { name: "About", route: "/about" },
+  { name: "Portfolio", route: "/portfolio" },
+  { name: "Contact", route: "/contact" },
+
 ];
 
 export default function BasicNavbar(props: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const path = usePathname();
 
   return (
     <Navbar
@@ -46,9 +42,24 @@ export default function BasicNavbar(props: NavbarProps) {
       classNames={{
         base: cn("border-default-100", {
           "bg-default-200/50 dark:bg-default-100/50": isMenuOpen,
+          
         }),
         wrapper: "justify-center",
-        item: "hidden md:flex",
+        item: ["hidden md:flex",
+        "flex",
+        "relative",
+        "h-full",
+        "items-center",
+        "data-[active=true]:after:content-['']",
+        "data-[active=true]:after:absolute",
+        "data-[active=true]:after:bottom-0",
+        "data-[active=true]:after:left-0",
+        "data-[active=true]:after:right-0",
+        "data-[active=true]:after:h-[2px]",
+        "data-[active=true]:after:rounded-[2px]",
+        "data-[active=true]:after:bg-primary",
+
+      ]
       }}
       className=" lg:px-28"
       height="60px"
@@ -66,34 +77,27 @@ export default function BasicNavbar(props: NavbarProps) {
       </NavbarBrand>
 
       {/* Center Content */}
-      <NavbarContent justify="center">
-        
-        <NavbarItem>
-          <Link className="text-default-500" href="/" size="sm">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-default-500" href="#" size="sm">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link aria-current="page" color="foreground" href="#" size="sm">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-default-500" href="/pricing" size="sm">
-            Pricing
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-default-500" href="#" size="sm">
-            Integrations
-          </Link>
-        </NavbarItem>
-        <ThemeButton/>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        {menuItems.map((item, index) => (
+          <NavbarItem key={index} isActive={path === item.route}>
+
+            
+            <Link
+              color={
+                path == item.route
+                  ? "primary"
+                  : "foreground"
+              }
+              className="w-full"
+              href={item.route}
+              size="sm"
+            >
+              {item.name}
+            </Link>
+          </NavbarItem>
+        ))}
+
+        <ThemeButton />
       </NavbarContent>
 
       {/* Right Content */}
@@ -103,7 +107,7 @@ export default function BasicNavbar(props: NavbarProps) {
             Login
           </Button>
           <Button
-            className="bg-foreground font-medium text-background"
+            className="dark:bg-foreground bg-primary font-medium text-background"
             color="secondary"
             endContent={<Icon icon="solar:alt-arrow-right-linear" />}
             radius="full"
@@ -141,7 +145,7 @@ export default function BasicNavbar(props: NavbarProps) {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link className="mb-2 w-full text-default-500" href="#" size="md">
-              {item}
+              {item.name}
             </Link>
             {index < menuItems.length - 1 && <Divider className="opacity-50" />}
           </NavbarMenuItem>
