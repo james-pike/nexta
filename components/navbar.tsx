@@ -90,7 +90,7 @@ export default function BasicNavbar(props: NavbarProps) {
               }
               className="w-full"
               href={item.route}
-              size="sm"
+              size="md"
             >
               {item.name}
             </Link>
@@ -118,6 +118,11 @@ export default function BasicNavbar(props: NavbarProps) {
         </NavbarItem>
       </NavbarContent>
 
+      <NavbarContent className="flex md:hidden " justify="end">
+        {isMenuOpen && (<ThemeButton />)}
+        
+      </NavbarContent>
+
       <NavbarMenuToggle className="text-default-400 md:hidden" />
 
       <NavbarMenu
@@ -138,13 +143,13 @@ export default function BasicNavbar(props: NavbarProps) {
           </Button>
         </NavbarMenuItem>
         <NavbarMenuItem className="mb-4">
-          <Button fullWidth as={Link} className="bg-foreground text-background" href="/#">
+          <Button fullWidth as={Link} className="bg-primary text-background" href="/#">
             Get Started
           </Button>
         </NavbarMenuItem>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="mb-2 w-full text-default-500" href="#" size="md">
+            <Link className="mb-2 w-full text-default-500" href={item.route} size="md">
               {item.name}
             </Link>
             {index < menuItems.length - 1 && <Divider className="opacity-50" />}
