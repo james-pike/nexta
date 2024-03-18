@@ -20,6 +20,7 @@ import {cn} from "../cn";
 import {AcmeIcon} from "../social";
 import { ThemeButton } from "./theme-button";
 import { usePathname } from "next/navigation";
+import ThemeDropdown from "./theme-dropdown";
 
 
 const menuItems = [
@@ -98,6 +99,7 @@ export default function BasicNavbar(props: NavbarProps) {
         ))}
 
         <ThemeButton />
+        <ThemeDropdown />
       </NavbarContent>
 
       {/* Right Content */}
@@ -120,6 +122,7 @@ export default function BasicNavbar(props: NavbarProps) {
 
       <NavbarContent className="flex md:hidden " justify="end">
         {isMenuOpen && (<ThemeButton />)}
+        {isMenuOpen && (<ThemeDropdown />)}
         
       </NavbarContent>
 
